@@ -24,14 +24,12 @@ pipeline {
                                     username: "$USERNAME",
                                     encryptedPassphrase: "$USERPASS"
                                 ], 
+                                verbose: true,
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: 'dist/trainSchedule.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        //execCommand: 'sudo rm -rf /opt/train-schedule/*'
-                                    )
-                                    sshTransfer(
                                         execCommand: 'sudo rm -rf /opt/train-schedule/*'
                                     )
                                 ]
