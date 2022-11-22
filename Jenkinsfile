@@ -31,6 +31,9 @@ pipeline {
                                         remoteDirectory: '/tmp',
                                         //execCommand: 'sudo rm -rf /opt/train-schedule/*'
                                     )
+                                    sshTransfer(
+                                        execCommand: 'sudo rm -rf /opt/train-schedule/*'
+                                    )
                                 ]
                             )
                         ]
